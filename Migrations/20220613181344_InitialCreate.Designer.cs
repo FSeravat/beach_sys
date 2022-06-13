@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace beach_sys.Migrations
 {
     [DbContext(typeof(BeachSysContext))]
-    [Migration("20220612205808_InitialCreate")]
+    [Migration("20220613181344_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -71,7 +71,7 @@ namespace beach_sys.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("CompartimentoId")
+                    b.Property<int?>("CompartimentoId")
                         .HasColumnType("int");
 
                     b.Property<string>("Cpf")
@@ -104,9 +104,7 @@ namespace beach_sys.Migrations
                 {
                     b.HasOne("beach_sys.Models.Compartimento", "Compartimento")
                         .WithMany()
-                        .HasForeignKey("CompartimentoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CompartimentoId");
                 });
 #pragma warning restore 612, 618
         }

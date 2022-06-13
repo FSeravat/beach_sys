@@ -69,7 +69,7 @@ namespace beach_sys.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("CompartimentoId")
+                    b.Property<int?>("CompartimentoId")
                         .HasColumnType("int");
 
                     b.Property<string>("Cpf")
@@ -102,9 +102,7 @@ namespace beach_sys.Migrations
                 {
                     b.HasOne("beach_sys.Models.Compartimento", "Compartimento")
                         .WithMany()
-                        .HasForeignKey("CompartimentoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CompartimentoId");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,0 +1,48 @@
+@model IEnumerable<beach_sys.Models.Armario>
+
+@{
+    ViewData["Title"] = "Index";
+    var id = ViewData["id"];
+}
+
+<h1>Armários</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Latitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Longitude)
+            </th>
+            @* <th>
+                Compartimentos disponíveis
+                </th> *@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="Compartimentos" asp-action="IndexUser" asp-route-id="@id"
+                    asp-route-secondId="@item.ArmarioId">@Html.DisplayFor(modelItem => item.Nome)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Latitude)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Longitude)
+                </td>
+                @* <td>
+                    @Html.DisplayFor(modelItem => item.Compartimentos)
+                    </td> *@
+            </tr>
+        }
+    </tbody>
+</table>

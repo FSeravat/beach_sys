@@ -13,7 +13,7 @@ namespace beach_sys.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, BeachSysContext context)
         {
             _logger = logger;
         }
@@ -23,7 +23,7 @@ namespace beach_sys.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Admin()
         {
             return View();
         }

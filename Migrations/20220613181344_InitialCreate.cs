@@ -53,7 +53,7 @@ namespace beach_sys.Migrations
                     Email = table.Column<string>(nullable: false),
                     Cpf = table.Column<string>(nullable: false),
                     Nome = table.Column<string>(nullable: false),
-                    CompartimentoId = table.Column<int>(nullable: false)
+                    CompartimentoId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -63,7 +63,7 @@ namespace beach_sys.Migrations
                         column: x => x.CompartimentoId,
                         principalTable: "Compartimento",
                         principalColumn: "CompartimentoId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(

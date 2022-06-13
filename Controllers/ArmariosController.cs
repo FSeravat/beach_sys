@@ -148,5 +148,11 @@ namespace beach_sys.Controllers
         {
             return _context.Armario.Any(e => e.ArmarioId == id);
         }
+
+        public async Task<IActionResult> IndexUser(int id)
+        {
+            ViewData["id"] = id;
+            return View(await _context.Armario.ToListAsync());
+        }
     }
 }

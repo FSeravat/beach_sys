@@ -20,5 +20,6 @@ namespace beach_sys.Models
         
         //Relações
         public virtual ICollection<Compartimento> Compartimentos { get; set; }
+        
     }
 }

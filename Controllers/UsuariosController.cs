@@ -47,7 +47,7 @@ namespace beach_sys.Controllers
         // GET: Usuarios/Create
         public IActionResult Create()
         {
-            ViewData["CompartimentoId"] = new SelectList(_context.Compartimento, "CompartimentoId", "Tamanho");
+            ViewData["CompartimentoId"] = new SelectList(_context.Compartimento, "CompartimentoId", "CompartimentoId");
             return View();
         }
 
@@ -154,6 +154,27 @@ namespace beach_sys.Controllers
         private bool UsuarioExists(int id)
         {
             return _context.Usuario.Any(e => e.UsuarioId == id);
+        }
+
+        public IActionResult CreateUser()
+        {
+            return View();
+        }
+
+        // POST: Usuarios/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateUser([Bind("UsuarioId,Email,Cpf,Nome,CompartimentoId")] Usuario usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(usuario);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("IndexUser","Armarios",new { id = "1" });
+            }
+            return View(usuario);
         }
     }
 }

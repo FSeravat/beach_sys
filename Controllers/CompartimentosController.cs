@@ -25,6 +25,16 @@ namespace beach_sys.Controllers
             return View(await beachSysContext.ToListAsync());
         }
 
+        public async Task<IActionResult> IndexUser(int id, int secondId)
+        {
+            var armario = await _context.Armario.FindAsync(id);
+            ViewData["Armario"] = armario.Nome;
+            var beachSysContext = _context.Compartimento.Include(c => c.Armario);
+            var beachSysContext1 = beachSysContext.Where(c => c.ArmarioId == secondId);
+            beachSysContext1 = beachSysContext1.Where(c => c.Disponivel);
+            return View(await beachSysContext1.ToListAsync());
+        }
+
         // GET: Compartimentos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -60,6 +70,7 @@ namespace beach_sys.Controllers
         {
             if (ModelState.IsValid)
             {
+                compartimento.Disponivel=true;
                 _context.Add(compartimento);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

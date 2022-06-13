@@ -21,7 +21,7 @@ namespace beach_sys.Models
         
         //Relações
         [ForeignKey("Compartimento")]
-        public int CompartimentoId { get; set; }
+        public int? CompartimentoId { get; set; }
         public virtual Compartimento Compartimento { get; set; }
     }
 }

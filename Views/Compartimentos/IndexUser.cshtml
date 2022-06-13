@@ -1,0 +1,37 @@
+@model IEnumerable<beach_sys.Models.Compartimento>
+
+@{
+    ViewData["Title"] = "Index";
+    var armario = ViewData["Armario"];
+}
+
+<h1>Compartimentos Disponíveis @armario</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Numero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tamanho)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tamanho)
+                </td>
+                <td>
+                    <a asp-action="Edit">Escolher</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

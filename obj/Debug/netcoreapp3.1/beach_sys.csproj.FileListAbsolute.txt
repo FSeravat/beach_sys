@@ -131,7 +131,6 @@ C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\beach_sys.Ta
 C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\beach_sys.TagHelpers.output.cache
 C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\beach_sys.RazorCoreGenerate.cache
 C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -161,3 +160,7 @@ C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\Razor\Views\
 C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Details.cshtml.g.cs
 C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Edit.cshtml.g.cs
 C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Index.cshtml.g.cs
+C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\CreateUser.cshtml.g.cs
+C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\Razor\Views\Home\Admin.cshtml.g.cs
+C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\Razor\Views\Armarios\IndexUser.cshtml.g.cs
+C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\Razor\Views\Compartimentos\IndexUser.cshtml.g.cs

@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Adminstrador";
+}
+<h1 class="mb-5">@ViewData["Title"]</h1>
+
+<div>
+    <a asp-controller="Usuarios" asp-action="Index">
+        <button type="button" class="btn btn-primary btn-block mb-4">Usuários</button>
+    </a>
+    <a asp-controller="Armarios" asp-action="Index">
+        <button type="button" class="btn btn-primary btn-block mb-4">Armários</button>
+    </a>
+    <a asp-controller="Compartimentos" asp-action="Index">
+        <button type="button" class="btn btn-primary btn-block mb-4">Compartimentos</button>
+    </a>
+</div>
