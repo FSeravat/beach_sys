@@ -3,6 +3,9 @@
 @{
     ViewData["Title"] = "Index";
     var armario = ViewData["Armario"];
+    var Compartimento = ViewBag.Compartimento;
+    var id = ViewBag.id;
+    var secondId = ViewBag.secondId;
 }
 
 <h1>Compartimentos Disponíveis @armario</h1>
@@ -15,6 +18,8 @@
             <th>
                 @Html.DisplayNameFor(model => model.Tamanho)
             </th>
+            <th>Aberto</th>
+            <th></th>
             <th></th>
         </tr>
     </thead>
@@ -29,7 +34,45 @@
                     @Html.DisplayFor(modelItem => item.Tamanho)
                 </td>
                 <td>
-                    <a asp-action="Edit">Escolher</a>
+                    @Html.DisplayFor(modelItem => item.Aberto)
+                </td>
+                <td>
+                    @if (Compartimento == null)
+                    {
+                        <a asp-action="Escolher" asp-route-id="@id" asp-route-secondId="@secondId"
+                    asp-route-compartimentoId="@item.CompartimentoId" asp-route-switchAction="0">Escolher</a>
+                    }
+                    else
+                    {
+                        if (item.CompartimentoId == Compartimento)
+                        {
+                            <a asp-action="Escolher" asp-route-id="@id" asp-route-secondId="@secondId"
+                    asp-route-compartimentoId="@item.CompartimentoId" asp-route-switchAction="1">Encerrar</a>
+                        }
+                        else
+                        {
+                            <a asp-action="Escolher" asp-route-id="@id" asp-route-secondId="@secondId"
+                    asp-route-compartimentoId="@item.CompartimentoId" asp-route-switchAction="2">Trocar</a>
+                        }
+                    }
+                </td>
+                <td>
+                    @if (item.CompartimentoId == Compartimento)
+                    {
+                        if (item.Aberto)
+                        {
+                            <a asp-action="Escolher" asp-route-id="@id" asp-route-secondId="@secondId"
+                    asp-route-compartimentoId="@item.CompartimentoId" asp-route-switchAction="3">Trancar</a>
+                        }
+                        else
+                        {
+                            <a asp-action="Escolher" asp-route-id="@id" asp-route-secondId="@secondId"
+                    asp-route-compartimentoId="@item.CompartimentoId" asp-route-switchAction="3">Destrancar</a>
+                        }
+
+                    }
+
+
                 </td>
             </tr>
         }

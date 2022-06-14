@@ -17,10 +17,11 @@ namespace beach_sys.Models
         [Required(ErrorMessage ="Tamanho obrigatório.")]
         public String Tamanho { get; set; }
         public bool Disponivel { get; set; }
+        public bool Aberto { get; set; }
 
         //Relações
         [ForeignKey("Armario")]
-        public int? ArmarioId { get; set; }
+        public int ArmarioId { get; set; }
         public virtual Armario Armario { get; set; }
     }
 }

@@ -172,7 +172,7 @@ namespace beach_sys.Controllers
             {
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("IndexUser","Armarios",new { id = "1" });
+                return RedirectToAction("IndexUser","Armarios",new { id = usuario.UsuarioId });
             }
             return View(usuario);
         }

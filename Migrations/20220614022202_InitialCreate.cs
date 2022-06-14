@@ -31,7 +31,8 @@ namespace beach_sys.Migrations
                     Numero = table.Column<int>(nullable: false),
                     Tamanho = table.Column<string>(nullable: false),
                     Disponivel = table.Column<bool>(nullable: false),
-                    ArmarioId = table.Column<int>(nullable: true)
+                    Aberto = table.Column<bool>(nullable: false),
+                    ArmarioId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -41,7 +42,7 @@ namespace beach_sys.Migrations
                         column: x => x.ArmarioId,
                         principalTable: "Armario",
                         principalColumn: "ArmarioId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(

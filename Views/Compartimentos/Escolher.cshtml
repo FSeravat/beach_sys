@@ -1,0 +1,73 @@
+@model beach_sys.Models.Compartimento
+
+@{
+    ViewData["Title"] = "Escolher";
+    var id = ViewBag.id;
+    var secondId = ViewBag.secondId;
+    var compartimentoId = ViewBag.compartimentoId;
+    var switchAction = ViewBag.switchAction;
+    var title = "";
+    switch (switchAction)
+    {
+        case 0:
+            title = "Deseja escolher esse compartimento ?";
+            break;
+        case 1:
+            title = "Deseja encerrar esse compartimento ?";
+            break;
+        case 2:
+            title = "Deseja trocar para esse compartimento ?";
+            break;
+        case 3:
+            title = "Deseja trancar esse compartimento ?";
+            break;
+    }
+}
+
+<h1>@title</h1>
+<div>
+    <h4>Compartimento</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tamanho)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tamanho)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Armario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Armario.Nome)
+        </dd class>
+    </dl>
+
+    <form asp-action="Escolher">
+        <input type="hidden" asp-for="CompartimentoId" />
+        @{
+            switch (switchAction)
+            {
+                case 0:
+                    <input asp-route-switchAction="0" type="submit" value="Escolher" class="btn btn-primary" />
+                    break;
+                case 1:
+                    <input asp-route-switchAction="1" type="submit" value="Encerrar" class="btn btn-danger" />
+                    break;
+                case 2:
+                    <input asp-route-switchAction="2" type="submit" value="Trocar" class="btn btn-primary" />
+                    break;
+                case 3:
+                    <input asp-route-switchAction="3" type="submit" value="Trancar" class="btn btn-primary" />
+                    break;
+            }
+        }
+        <a asp-action="IndexUser" asp-route-id="@id" asp-route-secondId="@secondId">Back to List</a>
+    </form>
+</div>

@@ -164,3 +164,4 @@ C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\Razor\Views\
 C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\Razor\Views\Home\Admin.cshtml.g.cs
 C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\Razor\Views\Armarios\IndexUser.cshtml.g.cs
 C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\Razor\Views\Compartimentos\IndexUser.cshtml.g.cs
+C:\Users\felip\Documents\Projetos\beach_sys\obj\Debug\netcoreapp3.1\Razor\Views\Compartimentos\Escolher.cshtml.g.cs

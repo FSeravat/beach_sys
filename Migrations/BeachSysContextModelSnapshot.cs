@@ -43,7 +43,10 @@ namespace beach_sys.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("ArmarioId")
+                    b.Property<bool>("Aberto")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<int>("ArmarioId")
                         .HasColumnType("int");
 
                     b.Property<bool>("Disponivel")
@@ -95,7 +98,9 @@ namespace beach_sys.Migrations
                 {
                     b.HasOne("beach_sys.Models.Armario", "Armario")
                         .WithMany("Compartimentos")
-                        .HasForeignKey("ArmarioId");
+                        .HasForeignKey("ArmarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("beach_sys.Models.Usuario", b =>
