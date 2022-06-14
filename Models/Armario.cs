@@ -22,7 +22,6 @@ namespace beach_sys.Models
         public virtual ICollection<Compartimento> Compartimentos { get; set; }
         
         public int qtdCompartimentos(){
-            Console.WriteLine(Compartimentos.Count);
             return Compartimentos.Count;
         }
     }

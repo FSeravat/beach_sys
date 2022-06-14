@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Index";
     var id = ViewData["id"];
+    var lista = ViewBag.lista;
 }
 
 <h1>Armários</h1>
@@ -19,15 +20,20 @@
             <th>
                 @Html.DisplayNameFor(model => model.Longitude)
             </th>
-            @* <th>
+            <th>
                 Compartimentos disponíveis
-                </th> *@
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
+            var count = 0;
+            foreach (var a in lista)
+            {
+                if (a.ArmarioId == item.ArmarioId) count++;
+            }
             <tr>
                 <td>
                     <a asp-controller="Compartimentos" asp-action="IndexUser" asp-route-id="@id"
@@ -39,9 +45,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Longitude)
                 </td>
-                @* <td>
-                    @Html.DisplayFor(modelItem => item.Compartimentos)
-                    </td> *@
+                <td>
+                    @count
+                </td>
             </tr>
         }
     </tbody>

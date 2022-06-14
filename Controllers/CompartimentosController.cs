@@ -198,6 +198,7 @@ namespace beach_sys.Controllers
                     break;
                 case 1:
                     compartimento.Disponivel=true;
+                    compartimento.Aberto=true;
                     usuario.CompartimentoId=null;
                     break;
                 case 2:
