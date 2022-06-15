@@ -2,13 +2,19 @@
 
 @{
     ViewData["Title"] = "Create";
+    var Cpf = "";
 }
 
 <div class="text-center">
     <h1 class="display-4">Bem vindo !</h1>
 </div>
-<form>
-
-    <a asp-controller="Usuarios" asp-action="CreateUser"><button type="button"
-            class="btn btn-primary btn-block mt-5">Registre-se</button></a>
+<form asp-action="Index">
+    <div class="form-group">
+        <label class="control-label">CPF</label>
+        <input asp-for="@Cpf" class="form-control" />
+        <span asp-validation-for="Cpf" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block mt-2 mb-2">Entrar</button>
+    <p class="d-flex justify-content-center">Ainda não tem cadastro ? <a asp-controller="Usuarios"
+            asp-action="CreateUser">Registre-se</a></p>
 </form>

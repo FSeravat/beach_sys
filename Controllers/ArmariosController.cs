@@ -155,7 +155,6 @@ namespace beach_sys.Controllers
             var contextCompartimento = _context.Compartimento.Where(i=>i.Disponivel);
             var listCompartimentos = await contextCompartimento.ToListAsync();
             ViewBag.lista = listCompartimentos;
-            Console.WriteLine(ViewBag.lista);
             return View(await _context.Armario.ToListAsync());
         }
     }

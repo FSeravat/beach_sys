@@ -60,6 +60,10 @@ namespace beach_sys.Controllers
         {
             if (ModelState.IsValid)
             {
+                if(await _context.Usuario.FirstOrDefaultAsync(m => m.Cpf == usuario.Cpf)!=null){
+                    ModelState.AddModelError("Cpf", "O CPF digitado já existe no nosso cadastro.");
+                    return View(usuario);
+                }
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -170,6 +174,10 @@ namespace beach_sys.Controllers
         {
             if (ModelState.IsValid)
             {
+                if(await _context.Usuario.FirstOrDefaultAsync(m => m.Cpf == usuario.Cpf)!=null){
+                    ModelState.AddModelError("Cpf", "O CPF digitado já existe no nosso cadastro.");
+                    return View(usuario);
+                }
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("IndexUser","Armarios",new { id = usuario.UsuarioId });
