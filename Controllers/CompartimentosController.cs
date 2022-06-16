@@ -161,6 +161,7 @@ namespace beach_sys.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            //var usuario = await _context.Usuario.FirstOrDefaultAsync(m => m.CompartimentoId == compartimentoId);
             var compartimento = await _context.Compartimento.FindAsync(id);
             _context.Compartimento.Remove(compartimento);
             await _context.SaveChangesAsync();

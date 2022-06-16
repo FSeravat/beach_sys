@@ -85,7 +85,7 @@ namespace beach_sys.Controllers
             {
                 return NotFound();
             }
-            ViewData["CompartimentoId"] = new SelectList(_context.Compartimento, "CompartimentoId", "Tamanho", usuario.CompartimentoId);
+            ViewData["CompartimentoId"] = new SelectList(_context.Compartimento, "CompartimentoId", "CompartimentoId", usuario.CompartimentoId);
             return View(usuario);
         }
 
@@ -150,6 +150,12 @@ namespace beach_sys.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var usuario = await _context.Usuario.FindAsync(id);
+            if(usuario.CompartimentoId!=null){
+                var compartimento = await _context.Compartimento.FindAsync(id);
+                compartimento.Disponivel = true;
+                compartimento.Aberto = true;
+                _context.Compartimento.Update(compartimento);
+            }
             _context.Usuario.Remove(usuario);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
