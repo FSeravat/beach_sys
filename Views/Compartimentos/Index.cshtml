@@ -22,32 +22,39 @@
                 @Html.DisplayNameFor(model => model.Disponivel)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Aberto)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Armario)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Numero)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tamanho)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Disponivel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Armario.Nome)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CompartimentoId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CompartimentoId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CompartimentoId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Numero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tamanho)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Disponivel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Aberto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Armario.Nome)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CompartimentoId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.CompartimentoId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CompartimentoId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
